@@ -19,7 +19,7 @@ class TestAddContact(unittest.TestCase):
                                 email="ispetrov@mail.ru", email2="ispetrov2@mail.ru", email3="ispetrov3@mail.ru",
                                 homepage="www.petrov.su", bday="2", bmonth="April", byear="1973", aday="6", amonth="May",
                                 ayear="1999", address2="Moscow", phone2="1", notes="Test"))
-
+        self.return_home_page(wd)
         self.logout(wd)
 
 
@@ -113,6 +113,9 @@ class TestAddContact(unittest.TestCase):
 
     def open_home_page(self, wd):
         wd.get("http://localhost/addressbook/")
+
+    def return_home_page(self, wd):
+        wd.find_element_by_link_text("home page").click()
     
 
     def tearDown(self):
