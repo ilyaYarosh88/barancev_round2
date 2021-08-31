@@ -9,7 +9,7 @@ from application import Application
 def app(request):
     fixture = Application()
 #Для разрушения фикстуры специальный параметр с особым методом
-    request.addfinalazer(fixture.destroy)
+    request.addfinalizer(fixture.destroy)
     return fixture
 
 
