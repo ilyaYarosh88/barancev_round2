@@ -7,12 +7,18 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
-    def add (self, contact):
+    def add(self, contact):
         wd = self.app.wd
         self.app.open_home_page()
         # init contact creation
         wd.find_element_by_link_text("add new").click()
-        # fill contact firm
+        self.fill_contact_firm(contact)
+        # submit contact creation
+        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        self.app.open_home_page()
+
+    def fill_contact_firm(self, contact):
+        wd = self.app.wd
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
@@ -81,6 +87,3 @@ class ContactHelper:
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.notes)
-        # submit contact creation
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        self.app.open_home_page()
