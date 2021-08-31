@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-from contact import Contact
+from model.contact import Contact
 import pytest
-from application import Application
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-
+from fixture.application import Application
 
 
 #инициализируем фикстуру
