@@ -12,7 +12,7 @@ class ContactHelper:
         self.app.open_home_page()
         # init contact creation
         wd.find_element_by_link_text("add new").click()
-        self.fill_contact_firm(contact)
+        self.fill_contact_firm(contact) #не забывать прописывать параметры
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.app.open_home_page()
