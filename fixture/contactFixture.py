@@ -9,6 +9,7 @@ class ContactHelper:
 
     def add (self, contact):
         wd = self.app.wd
+        self.app.open_home_page()
         # init contact creation
         wd.find_element_by_link_text("add new").click()
         # fill contact firm

@@ -3,7 +3,7 @@ import pytest
 from fixture.application import Application
 
 #инициализируем фикстуру
-@pytest.fixture(scope= "session")
+@pytest.fixture(scope = "session")
 def app(request):
     fixture = Application()
 #Для разрушения фикстуры специальный параметр с особым методом
