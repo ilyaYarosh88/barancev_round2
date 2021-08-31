@@ -26,7 +26,11 @@ class ContactHelper:
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
 
-
+    def edit_first_contact(self, contact):
+        wd = self.app.wd
+        wd.find_element_by_xpath("/html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img").click()
+        self.fill_contact_firm(contact)
+        wd.find_element_by_name("update")
 
     def fill_contact_firm(self, contact):
         wd = self.app.wd
