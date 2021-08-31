@@ -125,7 +125,7 @@ class Application:
         wd.find_element_by_name("notes").send_keys(contact.notes)
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        self.return_home_page()
+        self.open_home_page()
 
     def return_to_groups_page(self):
         wd = self.wd
