@@ -22,17 +22,17 @@ class GroupHelper:
         self.return_to_groups_page()
 
     def fill_group_form(self, group):
-        wd = self.app.wd
         self.change_field_value("group_name", group.name)
         self.change_field_value("group_header", group.header)
         self.change_field_value("group_footer", group.footer)
 
 
     def change_field_value(self, field_name, text):
-        if text.name is not None:
+        wd = self.app.wd
+        if text is not None:
             wd.find_element_by_name(field_name).click()
             wd.find_element_by_name(field_name).clear()
-            wd.find_element_by_name(field_name).send_keys(text.name)
+            wd.find_element_by_name(field_name).send_keys(text)
 
     def delete_first_group(self):
         wd = self.app.wd
