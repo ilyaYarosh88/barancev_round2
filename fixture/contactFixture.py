@@ -12,7 +12,7 @@ class ContactHelper:
         self.app.open_home_page()
         # init contact creation
         wd.find_element_by_link_text("add new").click()
-        self.fill_contact_firm(contact) #не забывать прописывать параметры
+        self.fill_contact_firms(contact) #не забывать прописывать параметры
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.app.open_home_page()
@@ -29,7 +29,7 @@ class ContactHelper:
     def edit_first_contact(self, new_contact_data):
         wd = self.app.wd
         wd.find_element_by_xpath("/html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img").click()
-        self.fill_contact_firm(new_contact_data)
+        self.fill_contact_firms(new_contact_data)
         wd.find_element_by_name("update")
 
     def change_field_value(self, field_name, text):
