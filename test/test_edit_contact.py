@@ -3,7 +3,7 @@ from model.contact import Contact
 
 
 def test_edit_first_contact(app):
-    app.sessionFixture.login(username="admin", password="secret")
+
     app.contactFixture.edit_first_contact(Contact(firstname="EditedIvan", middlename="EditedSergeevich", lastname="EditedPetrov", nickname="EditedButthead",
                             title="Editedtest", company="EditedGazprom", address="EditedMoscow", home="Edited+74950000000",
                             mobile="Edited+79190000000", work="Edited+74951000000", fax="Edited+74952000000",
