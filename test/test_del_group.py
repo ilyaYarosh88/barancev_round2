@@ -3,5 +3,5 @@
 def test_delete_first_group(app):
 
     app.groupFixture.delete_first_group()
-    app.sessionFixture.logout()
+
 

@@ -8,5 +8,8 @@ def app(request):
     fixture = Application()
     fixture.sessionFixture.login(username="admin", password="secret")
 #Для разрушения фикстуры специальный параметр с особым методом
-    request.addfinalizer(fixture.destroy)
+    def fin:
+        fixture.sessionFixture.logout()
+        fixture.destroy()
+    request.addfinalizer(fin)
     return fixture

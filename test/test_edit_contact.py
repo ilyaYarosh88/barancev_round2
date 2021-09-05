@@ -10,4 +10,3 @@ def test_edit_first_contact(app):
                             email="Editedispetrov@mail.ru", email2="Editedispetrov2@mail.ru", email3="Editedispetrov3@mail.ru",
                             homepage="Editedwww.petrov.su", bday="2", bmonth="April", byear="1973", aday="6", amonth="May",
                             ayear="1999", address2="EditedMoscow", phone2="Edited1", notes="EditedTest"))
-    app.sessionFixture.logout()

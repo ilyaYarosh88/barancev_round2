@@ -9,7 +9,7 @@ def test_add_group(app):
 def test_add_empty_group(app):
 
     app.groupFixture.create(Group(name="", header="", footer=""))
-    app.sessionFixture.logout()
+
 
 
 
