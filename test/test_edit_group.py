@@ -20,7 +20,6 @@ def test_modify_group_name(app):
 
 
 
-def test_modify_group_header(app):
     if app.groupFixture.group_count() == 0:
         app.groupFixture.create(Group(name="Test_name", header="Test_header", footer="Test_footer"))
     old_groups = app.groupFixture.get_group_list()
