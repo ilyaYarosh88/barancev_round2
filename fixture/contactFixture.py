@@ -1,6 +1,6 @@
 from selenium.webdriver.support.ui import Select
 from model.contact import Contact
-
+import time
 
 
 class ContactHelper:
@@ -16,7 +16,6 @@ class ContactHelper:
         self.fill_contact_firms(contact) #не забывать прописывать параметры
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-        self.app.open_home_page()
         self.contact_cache = None
 
 
@@ -58,6 +57,7 @@ class ContactHelper:
 
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
+        wd.find_element_by_css_selector("div.msgbox")
 
     def delete_contact_by_index(self, index):
         wd = self.app.wd
@@ -67,6 +67,8 @@ class ContactHelper:
         # submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
+        wd.find_element_by_css_selector("div.msgbox")
+        self.return_to_home_page()
         self.contact_cache = None
 
     def return_to_home_page(self):
