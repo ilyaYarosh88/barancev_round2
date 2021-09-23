@@ -1,5 +1,6 @@
 from model.contact import Contact
 from random import randrange
+import re
 
 
 def test_delete_some_contact(app):
